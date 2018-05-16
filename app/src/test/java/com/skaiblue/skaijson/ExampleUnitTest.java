@@ -10,6 +10,13 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+
+    @Test
+    public void toJSON()
+    {
+        System.out.println(SKAIJSON.toObject(TestObject.class, "{\"str\": \"테스트\"}"));
+    }
+
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
