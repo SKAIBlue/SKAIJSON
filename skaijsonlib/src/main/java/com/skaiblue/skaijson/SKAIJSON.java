@@ -1,8 +1,6 @@
 package com.skaiblue.skaijson;
 
 import android.app.Activity;
-import android.support.annotation.NonNull;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,20 +28,17 @@ public class SKAIJSON {
     }
 
 
-    public static void getFromHttpConnectionAsync(final Class t, final HttpURLConnection con, @NonNull final Activity activity, @NonNull final OnParseCompleted completed)
+    public static void getFromHttpConnectionAsync(final Class t, final HttpURLConnection con, final Activity activity, final OnParseCompleted completed)
     {
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 try {
-                    Log.d("SKAIJSON","Before connection");
                     final Object o = getFromHttpConnection(t, con);
-                    Log.d("SKAIJSON","After connection");
                     activity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             completed.onParseComplete(o);
-                            Log.d("SKAIJSON","Run on ui thread");
                         }
                     });
                 } catch (IOException e) {

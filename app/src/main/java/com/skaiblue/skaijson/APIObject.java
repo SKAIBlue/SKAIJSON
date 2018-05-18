@@ -2,10 +2,10 @@ package com.skaiblue.skaijson;
 
 public class APIObject {
 
-    @JSONField
+    //@JSONField
     String type;
 
-    @JSONField
+    //@JSONField
     APIInnerValue value;
 
     public APIObject()

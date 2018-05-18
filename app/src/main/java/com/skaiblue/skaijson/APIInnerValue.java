@@ -4,13 +4,13 @@ import java.util.List;
 
 public class APIInnerValue {
 
-    @JSONField
+    //@JSONField
     Integer id;
 
-    @JSONField
+    //@JSONField
     String joke;
 
-    @JSONField
+    //@JSONField
     List<String> categories;
 
     public APIInnerValue()

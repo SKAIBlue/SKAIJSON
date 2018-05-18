@@ -2,10 +2,10 @@ package com.skaiblue.skaijson;
 
 public class TestObject {
 
-    @JSONField
+    //@JSONField
     String str = "가나다라";
 
-    @JSONField
+    //@JSONField
     Integer value = 10;
 
     public TestObject() {

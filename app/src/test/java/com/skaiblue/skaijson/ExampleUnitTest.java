@@ -14,7 +14,7 @@ public class ExampleUnitTest {
     @Test
     public void toJSON()
     {
-        System.out.println(SKAIJSON.toObject(TestObject.class, "{\"str\": \"테스트\"}"));
+        //.out.println(SKAIJSON.toObject(TestObject.class, "{\"str\": \"테스트\"}"));
     }
 
     @Test
