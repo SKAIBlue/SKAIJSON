@@ -22,12 +22,29 @@ public class SKAIJSON {
 
     }
 
+
+    /**
+     * If you use getFromHttpConnectionAsync method
+     * use this interface
+     * @param <T> Callback object type
+     */
     public interface OnParseCompleted<T>
     {
+        /**
+         * Callback on UI Thread.
+         * @param t
+         */
         void onParseComplete(T t);
     }
 
 
+    /**
+     * get String on HTTP Page and parsing to Object. run async.
+     * @param t Type of Object.
+     * @param con HTTP Connection.
+     * @param activity Activity for getting UI Thread.
+     * @param completed Event interface
+     */
     public static void getFromHttpConnectionAsync(final Class t, final HttpURLConnection con, final Activity activity, final OnParseCompleted completed)
     {
         Runnable runnable = new Runnable() {
@@ -50,6 +67,14 @@ public class SKAIJSON {
     }
 
 
+
+    /**
+     * get String on HTTP Page and parsing to Object.
+     * @param t Type of Object.
+     * @param con HTTP Connection.
+     * @return Parsed Object
+     * @throws IOException
+     */
     public static Object getFromHttpConnection(Class t, HttpURLConnection con) throws IOException {
         int responseCode = con.getResponseCode();
         BufferedReader br;
@@ -66,9 +91,10 @@ public class SKAIJSON {
         return toObject(t, response.toString());
     }
 
+
+
     /**
      * Object to json
-     *
      * @param o object
      * @return converted JSONObject
      */
@@ -106,7 +132,6 @@ public class SKAIJSON {
 
     /**
      * List to JSONArray
-     *
      * @param list list
      * @return converted JSONList
      */
@@ -129,7 +154,6 @@ public class SKAIJSON {
 
     /**
      * JSON Array to List
-     *
      * @param t    type of list
      * @param json json string
      * @return List
@@ -140,6 +164,23 @@ public class SKAIJSON {
         } catch (JSONException e) {
             System.out.println("JSONList 를 리스트로 변환하는 과정에서 오류가 발생하였습니다.");
             return new ArrayList();
+        }
+    }
+
+
+    /**
+     * JSONObject to Object
+     *
+     * @param t    type of object
+     * @param json json string
+     * @return Object
+     */
+    public static Object toObject(Class t, String json) {
+        try {
+            return toObject(t, new JSONObject(json));
+        } catch (JSONException e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
@@ -164,21 +205,7 @@ public class SKAIJSON {
     }
 
 
-    /**
-     * JSONObject to Object
-     *
-     * @param t    type of object
-     * @param json json string
-     * @return Object
-     */
-    public static Object toObject(Class t, String json) {
-        try {
-            return toObject(t, new JSONObject(json));
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
+
 
 
     private static Object toObject(Class t, JSONObject json) {
