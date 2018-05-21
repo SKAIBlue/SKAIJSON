@@ -200,7 +200,7 @@ class JUserName {
     
 }
 ```
-
+JLocation.java
 
 ```java
 class JLocation {
@@ -245,6 +245,7 @@ public class MainActivity extends AppCompatActivity{
     private MainActivity that;
     
     
+    // This is Event instance.
     private SKAIJSON.OnParseCompleted<JRandomUser> randomUserOnParseCompleted = new SKAIJSON.OnParseCompleted<JRandomUser>() {
         @Override
         public void onParseComplete(JRandomUser jRandomUser) {
@@ -290,7 +291,68 @@ public class MainActivity extends AppCompatActivity{
 
 }
 
+```
 
 
+### Methods
+
+```java
+
+
+    /**
+     * get String on HTTP Page and parsing to Object. run async.
+     * @param t Type of Object.
+     * @param con HTTP Connection.
+     * @param activity Activity for getting UI Thread.
+     * @param completed Event interface
+     */
+    public static void getFromHttpConnectionAsync(final Class t, final HttpURLConnection con, final Activity activity, final OnParseCompleted completed);
+
+
+
+    /**
+     * get String on HTTP Page and parsing to Object.
+     * @param t Type of Object.
+     * @param con HTTP Connection.
+     * @return Parsed Object
+     * @throws IOException
+     */
+    public static Object getFromHttpConnection(Class t, HttpURLConnection con) throws IOException;
+
+
+
+    /**
+     * Object to json
+     * @param o object
+     * @return converted JSONObject
+     */
+    public static JSONObject toJSONObject(Object o);
+
+
+    /**
+     * List to JSONArray
+     * @param list list
+     * @return converted JSONList
+     */
+    public static JSONArray toJSONArray(List list);
+
+
+    /**
+     * JSON Array to List
+     * @param t    type of list
+     * @param json json string
+     * @return List
+     */
+    public static List toList(Class t, String json);
+
+
+    /**
+     * JSONObject to Object
+     *
+     * @param t    type of object
+     * @param json json string
+     * @return Object
+     */
+    public static Object toObject(Class t, String json);
 ```
 
