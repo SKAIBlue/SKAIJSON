@@ -6,13 +6,13 @@ public class JUserName {
     public JUserName() {}
 
     @JSONField
-    String title;
+    public String title;
 
     @JSONField
-    String first;
+    public String first;
 
     @JSONField
-    String last;
+    public String last;
 
 
     @Override

@@ -8,37 +8,37 @@ public class JUser {
     public JUser() { }
 
     @JSONField
-    String gender;              // gender is String
+    public String gender;              // gender is String
 
     @JSONField
-    JUserName name;             // name is JSONObject so you have to create class for it.
+    public JUserName name;             // name is JSONObject so you have to create class for it.
 
     @JSONField
-    JLocation location;         // location is JSONObject so you have to create class for it.
+    public JLocation location;         // location is JSONObject so you have to create class for it.
 
     @JSONField
-    String email;               // email is String
+    public String email;               // email is String
 
     @JSONField
-    JLogin login;                // login is JSONObject so you have to create class for it.
+    public JLogin login;                // login is JSONObject so you have to create class for it.
 
     @JSONField
-    String dob;
+    public String dob;
 
     @JSONField
-    String registered;
+    public String registered;
 
     @JSONField
-    String phone;
+    public String phone;
 
     @JSONField
-    String cell;
+    public String cell;
 
     @JSONField
-    JPicture picture;
+    public JPicture picture;
 
     @JSONField
-    String net;
+    public String nat;
 
     @Override
     public String toString() {
@@ -53,7 +53,7 @@ public class JUser {
                 ", phone='" + phone + '\'' +
                 ", cell='" + cell + '\'' +
                 ", picture=" + picture +
-                ", net='" + net + '\'' +
+                ", net='" + nat + '\'' +
                 '}';
     }
 }

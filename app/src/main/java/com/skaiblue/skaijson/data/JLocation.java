@@ -8,16 +8,16 @@ public class JLocation {
     }
 
     @JSONField
-    String street;
+    public String street;
 
     @JSONField
-    String city;
+    public String city;
 
     @JSONField
-    String state;
+    public String state;
 
     @JSONField
-    Integer postcode;
+    public Integer postcode;
 
     @Override
     public String toString() {

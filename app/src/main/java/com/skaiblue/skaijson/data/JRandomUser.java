@@ -9,8 +9,9 @@ public class JRandomUser {
     // It must need default initializer for use this library.
     public JRandomUser() { }
 
-    @JSONField                  // If you want to inject data to field, You have to use this annotation.
-    List<JUser> results;
+    @JSONField                      // If you want to inject data to field, You have to use this annotation.
+    public List<JUser> results;     // results is JSONArray so use List
+                                    // * Set access level to public! *
 
 
     @Override

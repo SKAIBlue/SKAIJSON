@@ -8,10 +8,10 @@ public class JLogin {
     }
 
     @JSONField
-    String username;
+    public String username;
 
     @JSONField
-    String password;
+    public String password;
 
 
     @Override

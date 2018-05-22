@@ -8,13 +8,13 @@ public class JPicture {
     }
 
     @JSONField
-    String large;
+    public String large;
 
     @JSONField
-    String medium;
+    public String medium;
 
     @JSONField
-    String thumbnail;
+    public String thumbnail;
 
 
     @Override

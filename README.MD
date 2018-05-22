@@ -130,11 +130,12 @@ JRandomUser.java
 
 class JRandomUser {
     
-    // It must need default initializer for use this library.  
-    public JRandomUser() { }
+        // It must need default initializer for use this library.
+        public JRandomUser() { }
     
-    @JSONField                  // If you want to inject data to field, You have to use this annotation.
-    List<JUser> results;        // results is JSONArray so use List
+        @JSONField                      // If you want to inject data to field, You have to use this annotation.
+        public List<JUser> results;     // results is JSONArray so use List
+                                        // * Set access level to public! *
      
 }
 
@@ -146,39 +147,39 @@ JUser.java
 class JUser {
     // It must need default initializer for use this library.
     public JUser() { }
-    
+
     @JSONField
-    String gender;              // gender is String
-    
+    public String gender;              // gender is String
+
     @JSONField
-    JUserName name;             // name is JSONObject so you have to create class for it.
-    
+    public JUserName name;             // name is JSONObject so you have to create class for it.
+
     @JSONField
-    JLocation location;         // location is JSONObject so you have to create class for it.
-    
+    public JLocation location;         // location is JSONObject so you have to create class for it.
+
     @JSONField
-    String email;               // email is String
-    
+    public String email;               // email is String
+
     @JSONField
-    JLogin login;                // login is JSONObject so you have to create class for it.
-    
+    public JLogin login;                // login is JSONObject so you have to create class for it.
+
     @JSONField
-    String dob;
-    
+    public String dob;
+
     @JSONField
-    String registered;
-    
+    public String registered;
+
     @JSONField
-    String phone;
-    
+    public String phone;
+
     @JSONField
-    String cell;
-    
+    public String cell;
+
     @JSONField
-    JPicture picture;
-    
+    public JPicture picture;
+
     @JSONField
-    String net;
+    public String nat;
 }
 
 ```
@@ -188,15 +189,16 @@ JUserName.java
 ```java
 class JUserName {
     public JUserName() {}
-    
+
     @JSONField
-    String title;
-    
+    public String title;
+
     @JSONField
-    String first;
-    
+    public String first;
+
     @JSONField
-    String last;
+    public String last;
+
     
 }
 ```
@@ -209,16 +211,16 @@ class JLocation {
     }
     
     @JSONField
-    String street;
+    public String street;
     
     @JSONField
-    String city;
+    public String city;
     
     @JSONField
-    String state;
+    public String state;
     
-    @JSONField          // If You want parsing Number type, You must use Object Type.           
-    Integer postcode;   // (Ex: Integer, Double, Boolean ...)         
+    @JSONField                  // If You want parsing Number type, You must use Object Type.           
+    public Integer postcode;    // (Ex: Integer, Double, Boolean ...)         
     
 }
 ```
