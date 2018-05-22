@@ -32,6 +32,8 @@ dependencies {
 
 ### Example
 
+You can run this example from [here](https://github.com/SKAIBlue/SKAIJSONExample).
+
 We will use [Random User API](https://randomuser.me/api)
 
 JSON Structure of This api
