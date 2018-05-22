@@ -162,7 +162,7 @@ public class SKAIJSON {
         try {
             return toList(t, new JSONArray(json));
         } catch (JSONException e) {
-            System.out.println("JSONList 를 리스트로 변환하는 과정에서 오류가 발생하였습니다.");
+            System.out.println("Cannot convert List to JSONList");
             return new ArrayList();
         }
     }
@@ -247,11 +247,11 @@ public class SKAIJSON {
                         field.set(o, toObject(field.getType(), (JSONObject) value));
                     }
                 } catch (JSONException e) {
-                    System.out.println(String.format("JSON 에서 field 이름 %s를 찾을 수 없습니다.", name));
+                    System.out.println(String.format("Cannot find %s from JSON", name));
                 } catch (IllegalAccessException e) {
-                    System.out.println(String.format("Field 에서 %s의 값을 설정할 수 없습니다.", name));
+                    System.out.println(String.format("Cannot inject value to %s", name));
                 } catch (IllegalArgumentException e) {
-                    System.out.println(String.format("Field 에서 %s의 값을 설정할 수 없습니다.", name));
+                    System.out.println(String.format("Cannot inject value to %s", name));
                 }
             }
         }
